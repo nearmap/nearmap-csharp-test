@@ -8,14 +8,12 @@ namespace NMTest.DataSource
 {
     public class DatabaseStore
     {
-        Dictionary<string, object> _Values;
-
         public object GetValue(string key)
         {
             //simulates 50 ms roundtrip to the database
             Thread.Sleep(50);
             object value;
-            if (_Values.TryGetValue(key, out value))
+            if (values.TryGetValue(key, out value))
             {
                 return value;
             }
@@ -26,7 +24,9 @@ namespace NMTest.DataSource
         {
             //simulates 50 ms roundtrip to the database
             Thread.Sleep(50);
-            _Values[key] = value;
+            values[key] = value;
         }
+
+        Dictionary<string, object> values = new Dictionary<string, object>();
     }
 }

@@ -8,8 +8,8 @@ namespace NMTest.DataSource
 {
     public class DistributedCacheStore
     {
-        Dictionary<string, object> _Values;
-
+        Dictionary<string, object> _Values = new Dictionary<string, object>();
+        
         public object GetValue(string key)
         {
             //simulates 5 ms roundtrip to the distributed cache
