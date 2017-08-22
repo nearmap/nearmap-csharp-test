@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading;
 
 namespace NMTest.DataSource
 {
     public class DatabaseStore
     {
+        private readonly Dictionary<string, object> _values = new Dictionary<string, object>();
+
         public object GetValue(string key)
         {
-            //simulates 50 ms roundtrip to the database
-            Thread.Sleep(50);
+            //simulates 500 ms roundtrip to the database
+            Thread.Sleep(500);
             object value;
-            if (values.TryGetValue(key, out value))
+            if (_values.TryGetValue(key, out value))
             {
                 return value;
             }
@@ -22,11 +21,9 @@ namespace NMTest.DataSource
 
         public void StoreValue(string key, object value)
         {
-            //simulates 50 ms roundtrip to the database
-            Thread.Sleep(50);
-            values[key] = value;
+            //simulates 500 ms roundtrip to the database
+            Thread.Sleep(500);
+            _values[key] = value;
         }
-
-        Dictionary<string, object> values = new Dictionary<string, object>();
     }
 }

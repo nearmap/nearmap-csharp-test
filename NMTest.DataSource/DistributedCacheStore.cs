@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading;
 
 namespace NMTest.DataSource
 {
     public class DistributedCacheStore
     {
-        Dictionary<string, object> _Values = new Dictionary<string, object>();
+        private readonly Dictionary<string, object> _values = new Dictionary<string, object>();
         
         public object GetValue(string key)
         {
-            //simulates 5 ms roundtrip to the distributed cache
-            Thread.Sleep(5);
+            //simulates 100 ms roundtrip to the distributed cache
+            Thread.Sleep(100);
             object value;
-            if (_Values.TryGetValue(key, out value))
+            if (_values.TryGetValue(key, out value))
             {
                 return value;
             }
@@ -24,9 +21,9 @@ namespace NMTest.DataSource
 
         public void StoreValue(string key, object value)
         {
-            //simulates 5 ms roundtrip to the distributed cache
-            Thread.Sleep(5);
-            _Values[key] = value;
+            //simulates 100 ms roundtrip to the distributed cache
+            Thread.Sleep(100);
+            _values[key] = value;
         }
     }
 }
