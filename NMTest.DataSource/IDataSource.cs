@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NMTest.DataSource
+﻿namespace NMTest.DataSource
 {
     public interface IDataSource
     {
