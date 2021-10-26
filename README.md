@@ -33,7 +33,7 @@ If the solution is incomplete, please state what hasn't been finished and outlin
 Implement the `IDataSource` interface to create a mechanism to retrieve data from `DatabaseStore` with lowest possible latency.
 For a frequently-requested item your `IDataSource.GetValue()` implementation should have a better response time than the distributed cache store (ie < 100ms).
 
-* The user of the `IDataStore` interface must not have to deal with thread synchronisation.
+* The user of the `IDataSource` interface must not have to deal with thread synchronisation.
 * You must write unit tests for all new functionality, and all tests must pass.
 * You can use any publicly available libraries in unit tests
 * Your non-test code can use an IoC library if desired, and otherwise only .NET Framework or .NET Core libraries/classes
