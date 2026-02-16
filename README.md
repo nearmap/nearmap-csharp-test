@@ -24,7 +24,7 @@ After startup:
 Complete the 2 parts below & submit the solution. 
 If the solution is incomplete, please state what hasn't been finished and outline how you are planning on solving it.
 
-* Provided code can be modified at will.
+* Unless otherwise stated, the provided code can be modified at will
 * The whole solution must build with no errors.
 * You can use Visual Studio or any other C# IDE.
 
@@ -68,3 +68,4 @@ Complete the `Main()` to test your `IDataSource` implementation; it must:
 
 * **DO NOT** fork this repository or create pull requests on it, because we don't want other candidates to see your solution.
 * Provide your solution as a `.zip` or .`gz` archive file, either via email or some Dropbox-like service, to your Nearmap contact.
+
